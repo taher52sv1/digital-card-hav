@@ -1,0 +1,246 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+<meta charset="UTF-8" />\
+<meta name="viewport" content="width=device-width, initial-scale=1" />\
+<title>Huzaifa Vaziri - Digital Visiting Card</title>\
+<style>\
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');\
+\
+  body \{\
+    margin: 0;\
+    height: 100vh;\
+    display: flex;\
+    justify-content: center;\
+    align-items: center;\
+    background: #f0f4f8;\
+    font-family: 'Poppins', sans-serif;\
+    user-select: none;\
+  \}\
+\
+  .card-container \{\
+    perspective: 1500px;\
+  \}\
+\
+  .card \{\
+    width: 360px;\
+    height: 240px;\
+    background: #ffffff;\
+    border-radius: 20px;\
+    box-shadow:\
+      0 8px 24px rgba(0,0,0,0.15),\
+      inset 0 0 12px #e2e8f0;\
+    color: #222222;\
+    position: relative;\
+    cursor: pointer;\
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);\
+    transform-style: preserve-3d;\
+    padding: 20px;\
+    box-sizing: border-box;\
+    overflow: hidden;\
+  \}\
+\
+  .card.is-flipped \{\
+    transform: rotateY(180deg);\
+  \}\
+\
+  .card-front,\
+  .card-back \{\
+    position: absolute;\
+    inset: 0;\
+    border-radius: 20px;\
+    backface-visibility: hidden;\
+    display: flex;\
+    flex-direction: column;\
+    justify-content: center;\
+    padding: 20px;\
+    box-sizing: border-box;\
+    overflow: hidden;\
+  \}\
+\
+  .card-front \{\
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);\
+    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);\
+    color: #0d1a26;\
+  \}\
+\
+  .card-back \{\
+    background: linear-gradient(135deg, #f3e5f5, #ce93d8);\
+    box-shadow: 0 4px 8px rgba(156, 39, 176, 0.3);\
+    color: #3b2a4d;\
+    transform: rotateY(180deg);\
+  \}\
+\
+  h1 \{\
+    margin: 0 0 8px 0;\
+    font-weight: 700;\
+    font-size: 1.6rem;\
+    letter-spacing: 0.8px;\
+    word-wrap: break-word;\
+  \}\
+\
+  .company \{\
+    font-weight: 600;\
+    font-size: 1.1rem;\
+    margin-bottom: 8px;\
+    color: #1565c0;\
+    word-wrap: break-word;\
+  \}\
+\
+  .department \{\
+    font-weight: 400;\
+    font-size: 1rem;\
+    color: #2e4482;\
+    margin-bottom: 16px;\
+    word-wrap: break-word;\
+  \}\
+\
+  .contact-info \{\
+    font-size: 0.9rem;\
+    line-height: 1.5;\
+    color: #263238;\
+    word-wrap: break-word;\
+  \}\
+\
+  .contact-info div \{\
+    margin-bottom: 6px;\
+  \}\
+\
+  .contact-info a \{\
+    color: #1565c0;\
+    text-decoration: none;\
+  \}\
+  .contact-info a:hover,\
+  .contact-info a:focus \{\
+    text-decoration: underline;\
+  \}\
+\
+  .card::before \{\
+    content: '';\
+    position: absolute;\
+    top: -6px; left: -6px; right: -6px; bottom: -6px;\
+    border-radius: 26px;\
+    background: linear-gradient(270deg, #1976d2, #9c27b0, #1976d2);\
+    background-size: 600% 600%;\
+    animation: glowing 15s linear infinite;\
+    z-index: -1;\
+  \}\
+\
+  @keyframes glowing \{\
+    0%\{background-position:0% 50%;\}\
+    50%\{background-position:100% 50%;\}\
+    100%\{background-position:0% 50%;\}\
+  \}\
+\
+  .card-back h1 \{\
+    font-size: 1.5rem;\
+    margin-bottom: 12px;\
+    text-align: center;\
+    word-wrap: break-word;\
+  \}\
+\
+  .bio \{\
+    font-size: 0.9rem;\
+    line-height: 1.5;\
+    text-align: center;\
+    padding: 0 12px;\
+    color: #4a3f61;\
+    word-wrap: break-word;\
+  \}\
+\
+  .address \{\
+    margin-top: 18px;\
+    font-size: 0.85rem;\
+    color: #5e4a80;\
+    text-align: center;\
+    line-height: 1.4;\
+    word-wrap: break-word;\
+  \}\
+\
+  .copyright \{\
+    margin-top: auto;\
+    font-size: 0.75rem;\
+    text-align: center;\
+    color: #7e6fa3;\
+  \}\
+\
+  @media (max-width: 400px) \{\
+    .card \{\
+      width: 90vw;\
+      height: 240px;\
+      padding: 20px 20px;\
+    \}\
+    .card-front,\
+    .card-back \{\
+      padding: 15px 20px;\
+    \}\
+    h1 \{\
+      font-size: 1.4rem;\
+    \}\
+  \}\
+</style>\
+</head>\
+<body>\
+  <div\
+    class="card-container"\
+    title="Click or tap to flip"\
+    role="button"\
+    tabindex="0"\
+    aria-pressed="false"\
+    aria-label="Toggle business card details"\
+  >\
+    <div class="card" id="card" aria-live="polite" aria-atomic="true">\
+      <div class="card-front" role="region" aria-label="Business card front side">\
+        <h1>Huzaifa Vaziri</h1>\
+        <div class="company">Al Jamea Tus Saifiyah</div>\
+        <div class="department">Auditorium</div>\
+        <div class="contact-info" aria-label="Contact information">\
+          <div>\uc0\u55356 \u57314  Office: <a href="tel:+912613011353" aria-label="Office phone number">+91 261 301 1353</a></div>\
+          <div>\uc0\u55357 \u56561  Mobile: <a href="tel:+919909623752" aria-label="Mobile phone number">+91 99096 23752</a></div>\
+          <div>\uc0\u55357 \u56551  Email: <a href="mailto:vaziri110@gmail.com" aria-label="Email address">vaziri110@gmail.com</a></div>\
+        </div>\
+      </div>\
+      <div class="card-back" role="region" aria-label="Business card back side">\
+        <h1>About Me</h1>\
+        <p class="bio">\
+          Experienced IT &amp; Audio Video specialist working at Al Jamea Tus Saifiyah,<br />\
+          Auditorium department.<br />\
+          Passionate about delivering flawless audio and video technology solutions.<br />\
+          Dedicated to excellence in every project.\
+        </p>\
+        <address class="address">\
+          Devdi Mubarak, Zampa Bazaar,<br />\
+          Surat 395003, India\
+        </address>\
+        <div class="copyright">&copy; 2024 Huzaifa Vaziri</div>\
+      </div>\
+    </div>\
+  </div>\
+<script>\
+  const card = document.getElementById('card');\
+  const container = card.parentElement;\
+\
+  function toggleCard() \{\
+    card.classList.toggle('is-flipped');\
+    const pressed = container.getAttribute('aria-pressed') === 'true';\
+    container.setAttribute('aria-pressed', String(!pressed));\
+  \}\
+\
+  container.addEventListener('click', toggleCard);\
+  container.addEventListener('keypress', (e) => \{\
+    if (e.key === 'Enter' || e.key === ' ') \{\
+      e.preventDefault();\
+      toggleCard();\
+    \}\
+  \});\
+</script>\
+</body>\
+</html>\
+}
