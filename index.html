@@ -15,60 +15,24 @@
       align-items: center;
       background: #f0f4f8;
       font-family: 'Poppins', sans-serif;
-      user-select: none;
-    }
-
-    .card-container {
-      perspective: 1500px;
     }
 
     .card {
       width: 360px;
-      height: 280px;
-      background: #ffffff;
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
       border-radius: 20px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.15), inset 0 0 12px #e2e8f0;
-      color: #222222;
-      position: relative;
-      cursor: pointer;
-      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-      transform-style: preserve-3d;
       padding: 20px;
       box-sizing: border-box;
-      overflow: hidden;
-    }
-
-    .card.is-flipped {
-      transform: rotateY(180deg);
-    }
-
-    .card-front, .card-back {
-      position: absolute;
-      inset: 0;
-      border-radius: 20px;
-      backface-visibility: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .card-front {
-      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
       color: #0d1a26;
-    }
-
-    .card-back {
-      background: linear-gradient(135deg, #f3e5f5, #ce93d8);
-      color: #3b2a4d;
-      transform: rotateY(180deg);
+      position: relative;
+      text-align: center;
     }
 
     h1 {
-      margin: 0 0 8px 0;
-      font-weight: 700;
+      margin: 0 0 8px;
       font-size: 1.6rem;
+      font-weight: 700;
     }
 
     .company {
@@ -79,6 +43,7 @@
     }
 
     .department {
+      font-weight: 400;
       font-size: 1rem;
       color: #2e4482;
       margin-bottom: 16px;
@@ -103,92 +68,55 @@
       text-decoration: underline;
     }
 
+    .qr {
+      margin: 20px auto 10px;
+    }
+
     .download-btn {
-      margin-top: 12px;
-      font-size: 0.9rem;
-      background-color: #1565c0;
-      color: #fff;
-      border: none;
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: #1976d2;
+      color: white;
       border-radius: 8px;
-      padding: 8px 14px;
-      cursor: pointer;
-      align-self: start;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
     }
 
     .download-btn:hover {
-      background-color: #0d47a1;
-    }
-
-    .bio, .address, .copyright {
-      text-align: center;
-      font-size: 0.85rem;
-      line-height: 1.4;
-      color: #4a3f61;
+      background-color: #1565c0;
     }
 
     .copyright {
-      margin-top: auto;
+      margin-top: 15px;
       font-size: 0.75rem;
       color: #7e6fa3;
-    }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      top: -6px; left: -6px; right: -6px; bottom: -6px;
-      border-radius: 26px;
-      background: linear-gradient(270deg, #1976d2, #9c27b0, #1976d2);
-      background-size: 600% 600%;
-      animation: glowing 15s linear infinite;
-      z-index: -1;
-    }
-
-    @keyframes glowing {
-      0%{background-position:0% 50%;}
-      50%{background-position:100% 50%;}
-      100%{background-position:0% 50%;}
-    }
-
-    @media (max-width: 400px) {
-      .card {
-        width: 90vw;
-        height: 280px;
-      }
     }
   </style>
 </head>
 <body>
-  <div class="card-container" title="Click to flip" role="button" tabindex="0" aria-label="Flip card">
-    <div class="card" id="card">
-      <div class="card-front">
-        <h1>Huzaifa Vaziri</h1>
-        <div class="company">Al Jamea Tus Saifiyah</div>
-        <div class="department">Auditorium</div>
-        <div class="contact-info">
-          <div>🏢 Office: <a href="tel:+912613011353">+91 261 301 1353</a></div>
-          <div>📱 Mobile: <a href="tel:+919909623752">+91 99096 23752</a></div>
-          <div>📧 Email: <a href="mailto:vaziri110@gmail.com">vaziri110@gmail.com</a></div>
-        </div>
-        <a href="huzaifa.vcf" download class="download-btn">📥 Download vCard</a>
-      </div>
-      <div class="card-back">
-        <h1>About Me</h1>
-        <p class="bio">
-          Experienced IT & AV specialist at Al Jamea Tus Saifiyah's Auditorium.<br>
-          Passionate about flawless AV systems and project excellence.
-        </p>
-        <p class="address">
-          Devdi Mubarak, Zampa Bazaar,<br> Surat 395003, India
-        </p>
-        <div class="copyright">&copy; 2024 Huzaifa Vaziri</div>
-      </div>
-    </div>
+
+<div class="card">
+  <h1>Huzaifa Vaziri</h1>
+  <div class="company">Al Jamea Tus Saifiyah</div>
+  <div class="department">Auditorium</div>
+
+  <div class="contact-info">
+    <div>🏢 Office: <a href="tel:+912613011353">+91 261 301 1353</a></div>
+    <div>📱 Mobile: <a href="tel:+919909623752">+91 99096 23752</a></div>
+    <div>📧 Email: <a href="mailto:vaziri110@gmail.com">vaziri110@gmail.com</a></div>
   </div>
-  <script>
-    const card = document.getElementById('card');
-    card.parentElement.addEventListener('click', () => {
-      card.classList.toggle('is-flipped');
-    });
-  </script>
+
+  <div class="qr">
+    <p>Scan to open</p>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://taher52sv1.github.io/digital-card-hav/" alt="QR Code">
+  </div>
+
+  <a class="download-btn" href="vaziri.vcf" download>📥 Download vCard</a>
+
+  <div class="copyright">&copy; 2024 Huzaifa Vaziri</div>
+</div>
+
 </body>
 </html>
